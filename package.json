@@ -1,0 +1,29 @@
+{
+  "name": "pi-browser-use-shared",
+  "version": "0.1.0",
+  "description": "Browser Use for Pi: shared Chromium, isolated session tabs and REPLs, crash recovery and automatic cleanup.",
+  "license": "MIT",
+  "author": "kestermcullough",
+  "keywords": ["pi-package", "browser-use", "browser", "chromium"],
+  "repository": { "type": "git", "url": "git+https://github.com/kestermcullough/pi-browser-use.git" },
+  "homepage": "https://github.com/kestermcullough/pi-browser-use#readme",
+  "bugs": { "url": "https://github.com/kestermcullough/pi-browser-use/issues" },
+  "engines": { "node": ">=22.19" },
+  "publishConfig": { "access": "public" },
+  "type": "module",
+  "pi": { "extensions": ["./index.ts"] },
+  "files": ["index.ts", "*.mjs", "launch-browser.sh", "scripts/setup-browser.mjs"],
+  "scripts": {
+    "setup": "node scripts/setup-browser.mjs",
+    "test": "node test/run-offline.mjs && node --test test/setup-browser.test.mjs"
+  },
+  "dependencies": { "@browser_use/pi": "latest" },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": { "optional": true },
+    "@earendil-works/pi-coding-agent": { "optional": true }
+  }
+}
