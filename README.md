@@ -9,14 +9,12 @@ Designed against `@browser_use/pi` 0.1.0. Setup/update agents must review the cu
 macOS on Apple Silicon, Node.js 22.19+, and Pi.
 
 ```sh
-git clone https://github.com/kestermcullough/pi-browser-use.git
-cd pi-browser-use
-npm install
+pi install git:github.com/kestermcullough/pi-browser-use
+cd ~/.pi/agent/git/github.com/kestermcullough/pi-browser-use
 npm run setup
-pi install .
 ```
 
-Then run `/reload` in Pi.
+`pi install` fetches the package and its dependencies. `npm run setup` downloads the latest stable Chrome for Testing to `~/.pi/browser-use/browser/`. Then run `/reload` in Pi. Update later with `pi update --extensions`.
 
 ## Use
 
